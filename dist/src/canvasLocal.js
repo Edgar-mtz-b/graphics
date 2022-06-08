@@ -1,5 +1,5 @@
-export class CanvasLocal {
-    constructor(g, canvas) {
+var CanvasLocal = /** @class */ (function () {
+    function CanvasLocal(g, canvas) {
         this.graphics = g;
         this.rWidth = 6;
         this.rHeight = 4;
@@ -12,17 +12,17 @@ export class CanvasLocal {
     /*iX(x: number):number{return Math.round(this.centerX + x/this.pixelSize);}
     iY(y: number): number{ return Math.round(this.centerY - y / this.pixelSize); }
     */
-    drawLine(x1, y1, x2, y2) {
+    CanvasLocal.prototype.drawLine = function (x1, y1, x2, y2) {
         this.graphics.beginPath();
         this.graphics.moveTo(x1, y1);
         this.graphics.lineTo(x2, y2);
         this.graphics.closePath();
         this.graphics.stroke();
-    }
+    };
     /*fx(x:number):number {
       return Math.sin(x*2.5);
     }*/
-    paint() {
+    CanvasLocal.prototype.paint = function () {
         this.drawLine(100.5, 100, 500, 100.5);
         this.drawLine(500, 100, 300, 400);
         this.drawLine(300, 400, 100, 100);
@@ -117,5 +117,7 @@ export class CanvasLocal {
             xA = xA1; xB = xB1; xC = xC1;
             yA = yA1; yB = yB1; yC = yC1;
         } */
-    }
-}
+    };
+    return CanvasLocal;
+}());
+export { CanvasLocal };
