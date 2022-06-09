@@ -1,14 +1,15 @@
-export class CanvasLocal {
-    constructor(g, canvas) {
+var CanvasLocal = /** @class */ (function () {
+    function CanvasLocal(g, canvas) {
         this.graphics = g;
         this.rWidth = 6;
         this.rHeight = 4;
         this.maxX = canvas.width - 1;
         this.maxY = canvas.height - 1;
-        this.pixelSize = Math.max(this.rWidth / this.maxX, this.rHeight / this.maxY);
+        this.pixelSize = Math.min(this.maxX, this.maxY); //Math.max(this.rWidth / this.maxX, this.rHeight / this.maxY);
         this.centerX = this.maxX / 2;
         this.centerY = this.maxY / 2;
     }
+<<<<<<< HEAD
     /*iX(x: number):number{return Math.round(this.centerX + x/this.pixelSize);}
     iY(y: number): number{ return Math.round(this.centerY - y / this.pixelSize); }
     */
@@ -119,3 +120,15 @@ export class CanvasLocal {
         } */
     }
 }
+=======
+    CanvasLocal.prototype.iX = function (x) { return Math.round(this.centerX + x); };
+    CanvasLocal.prototype.iY = function (y) { return Math.round(this.centerY - y); };
+    CanvasLocal.prototype.paint = function () {
+        this.graphics.arc(this.iX(0), this.iY(0), Math.abs(this.iX(4) - this.iX(0)), 0, 2 * Math.PI, false);
+        this.graphics.stroke();
+        this.graphics.fillText("Lienzo listo desde ts", this.iX(2), this.iY(3.7));
+    };
+    return CanvasLocal;
+}());
+export { CanvasLocal };
+>>>>>>> 81a450e8ce8868bbc4c4d11df137d7509b88c2c0
