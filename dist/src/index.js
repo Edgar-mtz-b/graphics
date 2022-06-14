@@ -92,8 +92,9 @@ function pza1IzqFunc() {
 }
 function pza12DerFunc() {
     var af = 10;
-    Rota3D.initRotate(obj.w[29], obj.w[30], af * Math.PI / 180);
-    for (var i = 101; i <= 140; i++) {
+    Rota3D.initRotate(obj.w[23], obj.w[24], af * Math.PI / 180); //23 y 24 son los ultimos puntos de la pieza
+    //for (let i = 101; i <= 140; i++){
+    for (var i = 1; i <= 24; i++) {
         obj.w[i] = Rota3D.rotate(obj.w[i]);
     }
     for (var i = 201; i <= 238; i++) {
@@ -104,8 +105,9 @@ function pza12DerFunc() {
 }
 function pza12IzqFunc() {
     var af = -10;
-    Rota3D.initRotate(obj.w[29], obj.w[30], af * Math.PI / 180);
-    for (var i = 101; i <= 140; i++) {
+    Rota3D.initRotate(obj.w[23], obj.w[24], af * Math.PI / 180); //23 y 24 son los ultimos puntos de la pieza
+    // for (let i = 101; i <= 140; i++){
+    for (var i = 1; i <= 24; i++) {
         obj.w[i] = Rota3D.rotate(obj.w[i]);
     }
     for (var i = 201; i <= 238; i++) {
