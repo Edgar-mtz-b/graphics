@@ -1,4 +1,3 @@
-
 //import { Input } from './Input.js';
 import { Obj3D } from './Obj3D.js';
 //import { Canvas3D } from './Canvas3D.js';
@@ -119,7 +118,7 @@ function pza12DerFunc() {
   Rota3D.initRotate(obj.w[23], obj.w[24], af * Math.PI / 180); //23 y 24 son los ultimos puntos de la pieza
 	
   //for (let i = 101; i <= 140; i++){
-    for (let i = 1; i <= 24; i++){
+  for (let i = 1; i <= 24; i++){
     obj.w[i] = Rota3D.rotate(obj.w[i]);
   }
   for (let i = 201; i <= 238; i++){
