@@ -107,7 +107,8 @@ function pza1IzqFunc() {
  	
 	Rota3D.initRotate( obj.w[139], obj.w[140], af*Math.PI/180);	
 	
-  for (let i = 201; i <= 238; i++){
+ // for (let i = 201; i <= 260; i++){
+  for (let i = 1; i <= 180; i++){
     obj.w[i] = Rota3D.rotate(obj.w[i]);
 	}
 	cv.setObj(obj);
@@ -121,7 +122,7 @@ function pza12DerFunc() {
   for (let i = 1; i <= 24; i++){
     obj.w[i] = Rota3D.rotate(obj.w[i]);
   }
-  for (let i = 201; i <= 238; i++){
+  for (let i = 182; i <= 240; i++){
     obj.w[i] = Rota3D.rotate(obj.w[i]);
 	}
 	cv.setObj(obj);
@@ -136,7 +137,7 @@ function pza12IzqFunc() {
   for (let i = 1; i <= 24; i++){
     obj.w[i] = Rota3D.rotate(obj.w[i]);
 	}
-  for (let i = 201; i <= 238; i++){
+  for (let i = 182; i <= 240; i++){
     obj.w[i] = Rota3D.rotate(obj.w[i]);
 	}
   
