@@ -1,11 +1,11 @@
+
 //import { Input } from './Input.js';
 import { Obj3D } from './Obj3D.js';
 //import { Canvas3D } from './Canvas3D.js';
 //import { CvWireframe } from './CvWireFrame.js';
-//import { CvHLines } from './CvHLines.js';
-import { CvZbuf } from './CvZbuf.js';
+import { CvHLines } from './CvHLines.js';
 import { Rota3D } from './Rota3D.js';
-import { Point3D } from './point3D.js';
+import { Point3D } from './Point3D.js';
 
 let canvas: HTMLCanvasElement;
 let graphics: CanvasRenderingContext2D;
@@ -13,7 +13,7 @@ let graphics: CanvasRenderingContext2D;
 canvas = <HTMLCanvasElement>document.getElementById('circlechart');
 graphics = canvas.getContext('2d');
 
-let cv: CvZbuf;
+let cv: CvHLines;
 let obj: Obj3D;
 let ang: number=0;
 
@@ -29,7 +29,7 @@ function leerArchivo(e:any) {
     obj = new Obj3D();
     if (obj.read(contenido)) {
       //sDir = sDir1;
-      cv = new CvZbuf(graphics, canvas);
+      cv = new CvHLines(graphics, canvas);
       cv.setObj(obj);
       cv.paint();
     }
@@ -95,7 +95,8 @@ function pza1DerFunc() {
  	
 	Rota3D.initRotate( obj.w[139], obj.w[140], af*Math.PI/180);	
 	
-  for (let i = 201; i <= 238; i++){
+ // for (let i = 201; i <= 238; i++){
+  for (let i = 1; i <= 180; i++){
     obj.w[i] = Rota3D.rotate(obj.w[i]);
 	}
 	cv.setObj(obj);
