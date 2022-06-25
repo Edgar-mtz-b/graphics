@@ -63,14 +63,6 @@ function incrDistFunc() {
 function decrDistFunc() {
     vp(0, 0, 0.5);
 }
-function pza1TR() {
-    var tr = 0.1;
-    for (var i = 17; i <= 20; i++) {
-        obj.w[i].x = obj.w[i].x + tr;
-    }
-    cv.setObj(obj);
-    cv.paint();
-}
 function pza1DerFunc() {
     var af = 10;
     Rota3D.initRotate(obj.w[139], obj.w[140], af * Math.PI / 180);

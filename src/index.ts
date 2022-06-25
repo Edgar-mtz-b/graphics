@@ -1,4 +1,3 @@
-
 //import { Input } from './Input.js';
 import { Obj3D } from './Obj3D.js';
 //import { Canvas3D } from './Canvas3D.js';
@@ -76,17 +75,6 @@ function incrDistFunc() {
 
 function decrDistFunc() {
   vp(0, 0, 0.5);
-}
-
-function pza1TR() {
-  let tr = 0.1;
- 	
-	
-  for (let i = 17; i <= 20; i++){
-    obj.w[i].x = obj.w[i].x + tr;
-	}
-	cv.setObj(obj);
-  cv.paint();	
 }
 
 
