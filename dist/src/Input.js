@@ -9,7 +9,6 @@ var Input = /** @class */ (function () {
         var ch;
         try {
             ch = this.pbis.charAt(this.index++);
-            //console.log(ch)
             if (this.index > this.pbis.length) {
                 this.eoFile = true;
                 this.ok = false;

@@ -13,7 +13,6 @@ export class Input
     let ch: string;
     try {
       ch = this.pbis.charAt(this.index++);
-      //console.log(ch)
       if(this.index>this.pbis.length) {
         this.eoFile = true;
         this.ok = false;

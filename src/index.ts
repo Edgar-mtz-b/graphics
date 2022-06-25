@@ -1,3 +1,4 @@
+
 //import { Input } from './Input.js';
 import { Obj3D } from './Obj3D.js';
 //import { Canvas3D } from './Canvas3D.js';
@@ -77,14 +78,12 @@ function decrDistFunc() {
   vp(0, 0, 0.5);
 }
 
-
 function pza1DerFunc() {
   let af = 10;
  	
 	Rota3D.initRotate( obj.w[139], obj.w[140], af*Math.PI/180);	
 	
- // for (let i = 201; i <= 238; i++){
-  for (let i = 1; i <= 180; i++){
+  for (let i = 201; i <= 238; i++){
     obj.w[i] = Rota3D.rotate(obj.w[i]);
 	}
 	cv.setObj(obj);
@@ -96,8 +95,7 @@ function pza1IzqFunc() {
  	
 	Rota3D.initRotate( obj.w[139], obj.w[140], af*Math.PI/180);	
 	
- // for (let i = 201; i <= 260; i++){
-  for (let i = 1; i <= 180; i++){
+  for (let i = 201; i <= 238; i++){
     obj.w[i] = Rota3D.rotate(obj.w[i]);
 	}
 	cv.setObj(obj);
@@ -105,13 +103,20 @@ function pza1IzqFunc() {
 }
 function pza12DerFunc() {
   let af = 10;
-  Rota3D.initRotate(obj.w[23], obj.w[24], af * Math.PI / 180); //23 y 24 son los ultimos puntos de la pieza
-	
-  //for (let i = 101; i <= 140; i++){
-  for (let i = 1; i <= 24; i++){
+  console.log(obj.w[29], obj.w[30], obj.w[6]);
+  Rota3D.initRotate(obj.w[29], obj.w[30], af * Math.PI / 180);
+	for (let i = 1; i <= 60; i++){
     obj.w[i] = Rota3D.rotate(obj.w[i]);
   }
-  for (let i = 182; i <= 240; i++){
+ // for (let i = 121; i <= 180; i++){
+ //   obj.w[i] = Rota3D.rotate(obj.w[i]);
+ // }
+ // for (let i = 101; i <= 140; i++){
+  for (let i = 61; i <= 120; i++){
+    obj.w[i] = Rota3D.rotate(obj.w[i]);
+  }
+  //for (let i = 201; i <= 238; i++){
+    for (let i = 181; i <= 240; i++){
     obj.w[i] = Rota3D.rotate(obj.w[i]);
 	}
 	cv.setObj(obj);
@@ -120,13 +125,13 @@ function pza12DerFunc() {
 
 function pza12IzqFunc() {
   let af = -10;
-	Rota3D.initRotate( obj.w[23], obj.w[24], af*Math.PI/180);	 //23 y 24 son los ultimos puntos de la pieza
+  console.log(obj.w[29], obj.w[30]);
+	Rota3D.initRotate( obj.w[29], obj.w[30], af*Math.PI/180);	
 	
- // for (let i = 101; i <= 140; i++){
-  for (let i = 1; i <= 24; i++){
+  for (let i = 101; i <= 140; i++){
     obj.w[i] = Rota3D.rotate(obj.w[i]);
 	}
-  for (let i = 182; i <= 240; i++){
+  for (let i = 201; i <= 238; i++){
     obj.w[i] = Rota3D.rotate(obj.w[i]);
 	}
   
@@ -148,8 +153,6 @@ document.getElementById('pza1Izq').addEventListener('click', pza1IzqFunc, false)
 document.getElementById('pza1Der').addEventListener('click', pza1DerFunc, false);
 document.getElementById('pza12Izq').addEventListener('click', pza12IzqFunc, false);
 document.getElementById('pza12Der').addEventListener('click', pza12DerFunc, false);
-
-document.getElementById('pzatr').addEventListener('click', pza1TR, false);
 
 let Pix: number, Piy: number;
 let Pfx: number, Pfy: number;

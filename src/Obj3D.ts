@@ -1,13 +1,12 @@
 // Obj3D.java: A 3D object and its 2D representation.
 // Uses: Point2D (Section 1.5), Point3D (Section 3.9),
 //       Polygon3D, Input (Section 5.5).
-import { Point2D } from './point2D.js';
-import { Point3D } from './point3D.js';
+import { Point2D } from './Point2D.js';
+import { Point3D } from './Point3D.js';
 import { Input } from './Input.js';
 import { Polygon3D } from './Polygon3D.js';
 import { Dimension } from './Dimension.js';
 import { CvHLines } from './CvHLines';
-import { CvZbuf } from './CvZbuf.js';
 
 export class Obj3D{
    rho: number; d: number; theta: number = 0.30; phi: number = 1.3; rhoMin: number; rhoMax: number;
@@ -50,7 +49,6 @@ export class Obj3D{
    readObject(inp: Input): boolean{
       let j = 0;
       for (; ;){
-         //debugger
          let i = inp.readInt();
          if (inp.fails()){inp.clear(); break;}
          if (i < 0)
@@ -69,17 +67,16 @@ export class Obj3D{
       this.shiftToOrigin(); // Origin in center of object.
       let ch:string;
       let count = 0;
-      //debugger
+ 
       do{   // Skip the line "Faces:"
-         ch = inp.readChar();
-         count++;
+         ch = inp.readChar(); count++;
       } while (!inp.eof() && ch != '\n');
       
       if (count < 6 || count > 8){
          console.log("Invalid input file"); return this.failing();
       }
       //  Build polygon list:
-      for (; ;){
+      for (;;){
          let vnrs:Array<number> = [];
          for (; ;){
             let i = inp.readInt();
@@ -210,7 +207,7 @@ export class Obj3D{
       this.inprodRange = this.inprodMax - this.inprodMin;
    }
 
-   vp( cv: CvHLines|CvZbuf, dTheta:number, dPhi:number, fRho:number): boolean {
+   vp( cv: CvHLines, dTheta:number, dPhi:number, fRho:number): boolean {
       this.theta += dTheta;
       this.phi += dPhi;
       let rhoNew = fRho * this.rho;
