@@ -9,7 +9,7 @@ import { Point3D } from './Point3D.js';
 
 let canvas: HTMLCanvasElement;
 let graphics: CanvasRenderingContext2D;
-
+let aux=10;
 canvas = <HTMLCanvasElement>document.getElementById('circlechart');
 graphics = canvas.getContext('2d');
 
@@ -80,32 +80,41 @@ function decrDistFunc() {
 
 function pza1DerFunc() {
   let af = 10;
- 	
+  
+ 	if(aux<40){
 	Rota3D.initRotate( obj.w[139], obj.w[140], af*Math.PI/180);	
-	
-  for (let i = 201; i <= 238; i++){
+	aux+=10;
+  //for (let i = 201; i <= 238; i++){
+    for (let i = 61; i <= 240; i++){
     obj.w[i] = Rota3D.rotate(obj.w[i]);
 	}
 	cv.setObj(obj);
   cv.paint();	
+  }
+  else
+  alert('no puede desplazarse más');
 }
 
 function pza1IzqFunc() {
   let af = -10;
- 	
+  if(aux>-40){
 	Rota3D.initRotate( obj.w[139], obj.w[140], af*Math.PI/180);	
-	
-  for (let i = 201; i <= 238; i++){
+	aux-=10;
+  //for (let i = 201; i <= 238; i++){
+    for (let i = 61; i <= 240; i++){
     obj.w[i] = Rota3D.rotate(obj.w[i]);
 	}
 	cv.setObj(obj);
   cv.paint();	
+  }else
+  alert('no puede desplazarse más');
 }
 function pza12IzqFunc() { //arriba
   let af = 10;
+
   console.log(obj.w[29], obj.w[30], obj.w[6]);
-  Rota3D.initRotate(obj.w[29], obj.w[30], af * Math.PI / 180);
-	/*
+  Rota3D.initRotate(obj.w[39], obj.w[40],  Math.PI / 180);
+  /*
   for (let i = 101; i <= 140; i++){
     obj.w[i] = Rota3D.rotate(obj.w[i]);
   }

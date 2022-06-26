@@ -6,6 +6,7 @@ import { CvHLines } from './CvHLines.js';
 import { Rota3D } from './Rota3D.js';
 var canvas;
 var graphics;
+var aux = 10;
 canvas = document.getElementById('circlechart');
 graphics = canvas.getContext('2d');
 var cv;
@@ -65,34 +66,46 @@ function decrDistFunc() {
 }
 function pza1DerFunc() {
     var af = 10;
-    Rota3D.initRotate(obj.w[139], obj.w[140], af * Math.PI / 180);
-    for (var i = 201; i <= 238; i++) {
-        obj.w[i] = Rota3D.rotate(obj.w[i]);
+    if (aux < 40) {
+        Rota3D.initRotate(obj.w[139], obj.w[140], af * Math.PI / 180);
+        aux += 10;
+        //for (let i = 201; i <= 238; i++){
+        for (var i = 61; i <= 240; i++) {
+            obj.w[i] = Rota3D.rotate(obj.w[i]);
+        }
+        cv.setObj(obj);
+        cv.paint();
     }
-    cv.setObj(obj);
-    cv.paint();
+    else
+        alert('no puede desplazarse más');
 }
 function pza1IzqFunc() {
     var af = -10;
-    Rota3D.initRotate(obj.w[139], obj.w[140], af * Math.PI / 180);
-    for (var i = 201; i <= 238; i++) {
-        obj.w[i] = Rota3D.rotate(obj.w[i]);
+    if (aux > -40) {
+        Rota3D.initRotate(obj.w[139], obj.w[140], af * Math.PI / 180);
+        aux -= 10;
+        //for (let i = 201; i <= 238; i++){
+        for (var i = 61; i <= 240; i++) {
+            obj.w[i] = Rota3D.rotate(obj.w[i]);
+        }
+        cv.setObj(obj);
+        cv.paint();
     }
-    cv.setObj(obj);
-    cv.paint();
+    else
+        alert('no puede desplazarse más');
 }
 function pza12IzqFunc() {
     var af = 10;
     console.log(obj.w[29], obj.w[30], obj.w[6]);
-    Rota3D.initRotate(obj.w[29], obj.w[30], af * Math.PI / 180);
+    Rota3D.initRotate(obj.w[39], obj.w[40], Math.PI / 180);
     /*
-  for (let i = 101; i <= 140; i++){
-    obj.w[i] = Rota3D.rotate(obj.w[i]);
-  }
-  for (let i = 201; i <= 238; i++){
-    obj.w[i] = Rota3D.rotate(obj.w[i]);
+    for (let i = 101; i <= 140; i++){
+      obj.w[i] = Rota3D.rotate(obj.w[i]);
     }
-  */
+    for (let i = 201; i <= 238; i++){
+      obj.w[i] = Rota3D.rotate(obj.w[i]);
+      }
+    */
     for (var i = 61; i <= 240; i++) {
         obj.w[i] = Rota3D.rotate(obj.w[i]);
     }
